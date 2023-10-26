@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div ng-app="">
+        <form>
+            <h1 style="text-align: center;font-weight: bold;text-decoration: underline;">Calculator</h1>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Number 1:</label> 
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="num1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Number 2 :</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" ng-model="num2">
+          </div>
+  
+          
+        </form>
+        <select ng-model="selectedOperation">
+            <option  value="SUM">SUM</option>
+            <option value="SUBTRACT">SUBTRACT</option>
+            <option value="MULTIPLY">MULTIPLY</option>
+            <option value="DIVISION">DIVISION</option>
+        </select>
+        <p ng-if="selectedOperation === 'SUM'">Result: {{num1}}+{{num2}}= {{ num1 + num2 }}</p>
+        <p ng-if="selectedOperation === 'SUBTRACT'">Result: {{num1}}-{{num2}}=  {{ num1 - num2 }}</p>
+        <p ng-if="selectedOperation === 'MULTIPLY'">Result: {{num1}}*{{num2}}=  {{ num1 * num2 }}</p>
+        <p ng-if="selectedOperation === 'DIVISION'">Result: {{num1}}/{{num2}}=  {{ num1 / num2 }}</p>
+    </div>
+</body>
+
+    </div>
+</body>
+</html>
